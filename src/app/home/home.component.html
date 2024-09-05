@@ -1,0 +1,45 @@
+<!-- <div class="container">
+  <div class="row justify-content-center">
+    <div class="jumbotron text-center mt-5">
+      <h1 class="display-4">Bem vindo ao Ecommerce!</h1>
+      <p class="lead">Seu app para escolher restaurantes</p>
+      <hr class="my-4">
+      <p>Pintou aquela fominha? Escolha entre centenas de restaurantes cadastrados em nosso sistema.</p>
+      <a class="btn btn-primary btn-lg" [routerLink]="['/restaurantes']" role="button">Escolher um restaurante</a>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container">
+  
+  <div class="secao">
+    <h3 class="text-center">Destaques do dia!</h3>
+    <h5 class="text-center">Aproveite as super ofertas que separamos para você:</h5>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-sm-4 mb-3" *ngFor="let oferta of ofertas">
+      <div class="card">
+        <img class="card-img-top" [src]="oferta.imagens[0].url">
+        <div class="card-block pl-3 mb-2">
+          <h4 class="card-title">{{ oferta.titulo }}</h4>
+          <p class="card-text">{{ oferta.descricao_oferta }}</p>
+          <p class="preco">{{ oferta.valor | currency:'BRL':true }}</p>
+          <a [routerLink]="['/oferta', oferta.id]" class="btn btn-outline-primary">Ver oferta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center" *ngIf="ofertas == undefined">
+    <div class="col-md-6 offset-md-3">
+      <h5 class="text-danger">Nenhum produto no momento (:</h5>
+    </div>
+  </div>
+
+  <hr />
+  
+</div>

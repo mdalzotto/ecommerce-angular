@@ -1,0 +1,54 @@
+@import '../../themes/variaveis.scss';
+
+.nav-top {
+    background-color: $primary;
+
+    a {
+        text-decoration: none;
+        color: $branco;
+        padding: 0 10px;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    b {
+        font-size: 1.25em;
+        color: $branco;
+        padding-right: 10px; 
+    }
+    .navbar-toggler {
+        outline: none;
+    }
+}
+
+.nav-bottom {
+    background-color: $preto;
+    color: $cinza;
+
+    a {
+        color: $cinza;
+    }
+}
+
+.active > a {
+    color: $primary-dark;
+    font-weight: bold;
+}
+
+ul {
+    position: relative;
+
+   ._a {
+        color: blue;
+    }
+}
+
+
+// @media only screen and (max-width: 600px) {
+//     .nav-top {
+//         background-color: red;
+//     }
+//     li {
+//         display: inline-flex; 
+//     }
+//   }

@@ -1,0 +1,41 @@
+<div class="container">
+  
+  <div class="secao">
+    <h3 class="text-center">Rodízios, Buffet, Carnes Especiais, Feijoada e mais!</h3>
+    <h5 class="text-center">Conheça as melhores ofertas de restaurantes:</h5>
+  </div>
+
+  <hr />
+
+  <div class="row mb-3" *ngFor="let _restaurantes of restaurantes">
+    <div class="col-md-4">
+      <img [src]="_restaurantes.imagens[0].url" />
+    </div>
+
+    <div class="col-md-8">
+      <div class="row">
+        <h4>{{ _restaurantes.titulo }}</h4>
+      </div>
+
+      <div class="row">
+        <h5>{{ _restaurantes.descricao_oferta}}</h5>
+      </div>
+
+      <div class="row">
+        <p>Anunciado por: <b>{{ _restaurantes.anunciante }}</b></p>
+      </div>
+
+      <div class="row">
+        <p>{{ _restaurantes.valor | currency:'BRL':true }}</p>
+      </div>
+
+      <div class="row">
+        <button [routerLink]="['/oferta', _restaurantes.id]" class="btn btn-outline-success">Ver oferta</button>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <hr />
+  <br>
+</div>
